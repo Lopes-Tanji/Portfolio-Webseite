@@ -1,1 +1,402 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #2c2c2c;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .nav-left {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-right {
+            font-size: 18px;
+        }
+
+        /* Main Content Container */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: white;
+        }
+
+        .text-section {
+            flex: 1;
+            padding-right: 40px;
+            line-height: 1.6;
+        }
+
+        .tech-section {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tech-section h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .html-logo {
+            background-color: #e44d26;
+        }
+
+        .css-logo {
+            background-color: #264de4;
+        }
+
+        .js-logo {
+            background-color: #f0db4f;
+            color: #333;
+        }
+
+        /* Dark Section */
+        .dark-section {
+            background-color: #2c2c2c;
+            height: 200px;
+        }
+
+        /* About Us Section */
+        .about-section {
+            background-color: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .about-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Team Members Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding: 60px 80px;
+            background-color: #e0e0e0;
+        }
+
+        .team-member {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-image {
+            background-color: #a8a8a8;
+            border-radius: 20px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .team-member:hover .member-image {
+            background-color: #909090;
+        }
+
+        .member-image span {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .member-info {
+            text-align: center;
+        }
+
+        .member-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .member-description {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #c0c0c0;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #a8a8a8;
+            padding: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-left h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-text,
+        .inquiries {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .footer-right {
+            padding-top: 10px;
+        }
+
+        .datenschutz-link {
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .datenschutz-link:hover {
+            color: #333;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .text-section {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            .tech-section {
+                width: 100%;
+            }
+            .team-grid {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">Webseitenname</div>
+        <div class="nav-right">Logo</div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <div class="text-section">
+            <p>Wir sind ein engagiertes Team, das sich auf moderne Webentwicklung spezialisiert hat.
+                Unsere Mission ist es, ansprechende, funktionale und nachhaltige Webauftritte zu gestalten.
+                Dabei setzen wir auf aktuelle Technologien und kreative Ideen.</p>
+        </div>
+
+        <div class="tech-section">
+            <h3>Unsere Technologien</h3>
+            <div class="logo-container"><div class="logo html-logo">HTML</div></div>
+            <div class="logo-container"><div class="logo css-logo">CSS</div></div>
+            <div class="logo-container"><div class="logo js-logo">JS</div></div>
+        </div>
+    </div>
+
+    <div class="dark-section"></div>
+
+    <div class="about-section">
+        <h2>About us</h2>
+    </div>
+
+    <div class="team-grid">
+        <a href="#mitglied1" class="team-member">
+            <div class="member-image"><span>Bild1</span></div>
+            <div class="member-info">
+                <div class="member-name">Max Mustermann</div>
+                <div class="member-description">Frontend-Entwickler</div>
+            </div>
+        </a>
+
+        <a href="#mitglied2" class="team-member">
+            <div class="member-image"><span>Bild2</span></div>
+            <div class="member-info">
+                <div class="member-name">Anna Beispiel</div>
+                <div class="member-description">UX/UI Designerin</div>
+            </div>
+        </a>
+
+        <a href="#mitglied3" class="team-member">
+            <div class="member-image"><span>Bild3</span></div>
+            <div class="member-info">
+                <div class="member-name">Jonas Weber</div>
+                <div class="member-description">Backend-Entwickler</div>
+            </div>
+        </a>
+
+        <a href="#mitglied4" class="team-member">
+            <div class="member-image"><span>Bild4</span></div>
+            <div class="member-info">
+                <div class="member-name">Lena Schmidt</div>
+                <div class="member-description">Projektmanagerin</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="contact-section">
+        <p>Stay in touch. Contact us</p>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>Impressum</h3>
+                <div class="social-icons">
+                    <div class="social-icon">f</div>
+                    <div class="social-icon">in</div>
+                    <div class="social-icon">X</div>
+                </div>
+                <p class="footer-text">
+                    Musterstraße 1<br>
+                    8000 Zürich<br>
+                    +41 25 123 44 55
+                </p>
+                <p class="inquiries">
+                    Inquiries at:<br>
+                    email@email.email
+                </p>
+            </div>
+            <div class="footer-right">
+                <a href="#datenschutz" class="datenschutz-link">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Scroll Animation für Team Members
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.team-member').forEach((member, i) => {
+            member.style.opacity = '0';
+            member.style.transform = 'translateY(20px)';
+            member.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
+            observer.observe(member);
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.style.boxShadow = window.scrollY > 100 
+                ? '0 2px 10px rgba(0,0,0,0.1)' 
+                : 'none';
+        });
+    </script>
+</body>
+</html>
 
