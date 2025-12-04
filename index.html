@@ -1,135 +1,215 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Website</title>
-    <link rel="stylesheet" href="/css/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benedict Dev Team – Webentwicklungs-Portfolio</title>
+  <meta
+    name="description"
+    content="Bewerbungs-Portfolio einer Webentwicklungs-Gruppe der Benedict-Schule. Vorstellung des Teams, der Rollen und Technologien."
+  />
+
+  <!-- Schriftart Poppins (wird später im CSS genutzt) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Externe Styles (folgt in index.css nach deinem nächsten GO) -->
+  <link rel="stylesheet" href="index.css" />
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <a href="index.html" class="nav-left">Webseitenname</a>
-        <a href="index.html#praktikanten" class="nav-right">Logo</a>
-    </nav>
+<body id="top">
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#top" class="logo">
+        Benedict Dev Team
+      </a>
 
-    <!-- Main Content Container -->
-    <div class="container">
-        <div class="text-section">
-            <p>Wir sind ein engagiertes Team, das moderne Webentwicklung mit Leidenschaft lebt und digitale Erlebnisse schafft, die Menschen begeistern und Marken stärken. Wir verbinden kreative Ideen mit aktuellen Technologien und einem feinen Gespür für Design und Nutzerfreundlichkeit. Jede Webseite entsteht mit viel Herzblut, von der ersten Idee bis zur fertigen Umsetzung, und wir achten dabei auf Funktionalität, Nachhaltigkeit und ein stimmiges Nutzererlebnis. Für uns ist jedes Projekt eine neue Chance, etwas Einzigartiges zu gestalten, das nicht nur heute überzeugt, sondern auch in Zukunft beeindruckt.</p>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="#hero">Start</a>
+        <a href="#about">Über uns</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO-BEREICH MIT SCHULHAUS-BILD IM HINTERGRUND (Bild später per CSS) -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero-card">
+        <div class="hero-text">
+          <h1 id="hero-title">Webentwicklung aus der Benedict-Schule</h1>
+          <p class="hero-subtitle">
+            Wir sind ein Team von angehenden Entwicklern und Designerinnen – und zeigen hier, was wir können.
+          </p>
+          <p>
+            Im Rahmen unserer Ausbildung an der Benedict-Schule beschäftigen wir uns mit modernen Webtechnologien wie
+            HTML, CSS und JavaScript. Diese Seite dient als kleines Bewerbungs-Portfolio: Hier stellen wir uns persönlich
+            vor, zeigen unsere Stärken und geben einen Einblick in unsere Zusammenarbeit als Team.
+          </p>
+          <p>
+            Unser Ziel ist es, Ihnen einen authentischen Eindruck von uns als zukünftige Mitarbeitende im Bereich
+            Webentwicklung zu geben – technisch, gestalterisch und als Team.
+          </p>
+
+          <a href="#team" class="btn btn-primary">
+            Team kennenlernen
+          </a>
         </div>
 
-        <div class="tech-section">
-            <h3>Unsere Technologien</h3>
-            <div class="logo-container"><div class="logo html-logo">HTML</div></div>
-            <div class="logo-container"><div class="logo css-logo">CSS</div></div>
-            <div class="logo-container"><div class="logo js-logo">JS</div></div>
+        <div class="hero-tech">
+          <h2>Unsere Technologien</h2>
+          <p class="hero-tech-intro">
+            Mit diesen Technologien setzen wir unsere Ideen im Web um:
+          </p>
+          <ul class="tech-list">
+            <li class="tech-badge tech-html">
+              <span class="tech-name">HTML</span>
+              <span class="tech-desc">Struktur & Inhalt der Webseite</span>
+            </li>
+            <li class="tech-badge tech-css">
+              <span class="tech-name">CSS</span>
+              <span class="tech-desc">Design, Layout & Effekte</span>
+            </li>
+            <li class="tech-badge tech-js">
+              <span class="tech-name">JavaScript</span>
+              <span class="tech-desc">Interaktivität & Logik</span>
+            </li>
+          </ul>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div class="dark-section"></div>
+    <!-- ABOUT-BEREICH -->
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">Wer wir sind</h2>
+        <p>
+          Wir sind Schülerinnen und Schüler der Benedict-Schule mit Fokus auf Informatik und Webentwicklung. In diesem
+          Projekt haben wir gemeinsam eine Website geplant, gestaltet und umgesetzt, um unsere Fähigkeiten, Interessen
+          und Rollen im Team zu präsentieren.
+        </p>
+        <p>
+          Diese Seite dient als kleines Bewerbungs-Portfolio: Sie soll zeigen, wie wir denken, arbeiten und zusammenarbeiten –
+          und Ihnen einen ersten Eindruck von uns als zukünftige Mitarbeitende geben.
+        </p>
+      </div>
+    </section>
 
-    <div class="about-section">
-        <h2>About us</h2>
-    </div>
+    <!-- TEAM-BEREICH -->
+    <section id="team" class="team" aria-labelledby="team-title">
+      <div class="container">
+        <h2 id="team-title">Unser Team</h2>
+        <p class="team-intro">
+          Jede Person bringt eigene Stärken ein. Gemeinsam decken wir die wichtigsten Bereiche der modernen
+          Webentwicklung ab.
+        </p>
 
-    <div id="praktikanten" class="team-grid">
-        <a href="dario_Lopes.html" class="team-member">
-            <div class="member-image"><span>Bild1</span></div>
-            <div class="member-info">
-                <div class="member-name">Dario Lopes</div>
-                <div class="member-description">Spezialisierung: Frontend & Backend, Datenbanken und Objektorientiertes Programieren</div>
-            </div>
-        </a>
+        <div class="team-grid">
+          <article class="team-member">
+            <div class="avatar" aria-hidden="true"></div>
+            <h3>Dario</h3>
+            <p class="role">Frontend & Layout</p>
+            <p class="bio">
+              Legt Wert auf klare Strukturen und sauberes Markup – sorgt dafür, dass unsere Ideen in ein übersichtliches
+              und stimmiges Layout umgesetzt werden.
+            </p>
+            <a href="dario.html" class="profile-link">Profil von Dario ansehen</a>
+          </article>
 
-        <a href="philipp_imboden.html" class="team-member">
-            <div class="member-image"><span>Bild2</span></div>
-            <div class="member-info">
-                <div class="member-name">Philipp Imboden</div>
-                <div class="member-description">Spezialisierung: Frontend-Entwicklung, UI/UX-Design sowie Datenbankmanagement</div>
-            </div>
-        </a>
+          <article class="team-member">
+            <div class="avatar" aria-hidden="true"></div>
+            <h3>Philipp</h3>
+            <p class="role">Backend & Logik</p>
+            <p class="bio">
+              Interessiert sich besonders für Datenflüsse, Logik und technische Umsetzung im Hintergrund. Denkt in
+              Strukturen und sorgt dafür, dass alles zuverlässig funktioniert.
+            </p>
+            <a href="philipp.html" class="profile-link">Profil von Philipp ansehen</a>
+          </article>
 
-        <a href="ricwell_Fajardo.html" class="team-member">
-            <div class="member-image"><span>Bild3</span></div>
-            <div class="member-info">
-                <div class="member-name">Ricwell Fajardo</div>
-                <div class="member-description">Spezialisierung: Frontend-Entwicklung, UI/UX Design und Datenbankmanagement</div>
-            </div>
-        </a>
+          <article class="team-member">
+            <div class="avatar" aria-hidden="true"></div>
+            <h3>Ricwell</h3>
+            <p class="role">UI/UX & Präsentation</p>
+            <p class="bio">
+              Achtet auf Ästhetik, Nutzerführung und den ersten Eindruck – vom Design bis zu den Details der
+              Oberfläche. Verbindet Technik mit einem klaren, modernen Look.
+            </p>
+            <a href="ricwell.html" class="profile-link">Profil von Ricwell ansehen</a>
+          </article>
 
-        <a href="levin_Kunzmann.html" class="team-member">
-            <div class="member-image"><span>Bild4</span></div>
-            <div class="member-info">
-                <div class="member-name">Levin Kunzmann</div>
-                <div class="member-description">Spezialisierung: UI/UX-design</div>
-            </div>
-        </a>
-    </div>
-
-    <div class="contact-section">
-        <p>Stay in touch. Contact us</p>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-left">
-                <h3>Impressum</h3>
-                <div class="social-icons">
-                    <div class="social-icon">f</div>
-                    <div class="social-icon">in</div>
-                    <div class="social-icon">X</div>
-                </div>
-                <p class="footer-text">
-                    Musterstraße 1<br>
-                    8000 Zürich<br>
-                    +41 25 123 44 55
-                </p>
-                <p class="inquiries">
-                    Inquiries at:<br>
-                    email@email.email
-                </p>
-            </div>
-            <div class="footer-right">
-                <a href="#datenschutz" class="datenschutz-link">Datenschutz</a>
-            </div>
+          <article class="team-member">
+            <div class="avatar" aria-hidden="true"></div>
+            <h3>Levin</h3>
+            <p class="role">Fullstack & Struktur</p>
+            <p class="bio">
+              Verbindet Frontend und Backend und behält dabei die technische Gesamtarchitektur im Blick. Sorgt dafür,
+              dass alle Teile des Projekts gut zusammenspielen.
+            </p>
+            <a href="levin.html" class="profile-link">Profil von Levin ansehen</a>
+          </article>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script>
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', e => {
-                e.preventDefault();
-                const target = document.querySelector(anchor.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
+    <!-- KONTAKT-BEREICH -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Kontakt</h2>
+        <p>
+          Haben Sie Interesse an uns als Lernende oder zukünftige Mitarbeitende im Bereich Webentwicklung?
+          Über die Kontaktdaten im Footer können Sie sich gerne bei uns melden.
+        </p>
+        <!-- Optional: später ein Kontaktformular ergänzen -->
+      </div>
+    </section>
+  </main>
 
-        // Scroll Animation für Team Members
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-section">
+        <h3>Projekt</h3>
+        <p>
+          Diese Website ist im Rahmen eines Schulprojekts an der Benedict-Schule entstanden und dient als
+          gemeinsames Bewerbungs-Portfolio unseres Webentwicklungsteams.
+        </p>
+      </div>
 
-        document.querySelectorAll('.team-member').forEach((member, i) => {
-            member.style.opacity = '0';
-            member.style.transform = 'translateY(20px)';
-            member.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
-            observer.observe(member);
-        });
+      <div class="footer-section">
+        <h3>Kontakt</h3>
+        <p>
+          Benedict-Schule<br />
+          Musterstrasse 1<br />
+          8000 Zürich
+        </p>
+        <p>
+          E-Mail:
+          <a href="mailto:info@example.com">info@example.com</a>
+        </p>
+        <p>
+          Telefon:
+          <a href="tel:+41000000000">+41 00 000 00 00</a>
+        </p>
+      </div>
 
-        // Navbar Scroll Effect
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            navbar.style.boxShadow = window.scrollY > 100 
-                ? '0 2px 10px rgba(0,0,0,0.1)' 
-                : 'none';
-        });
-    </script>
+      <div class="footer-section">
+        <h3>Links</h3>
+        <ul class="footer-links">
+          <li><a href="#top">Zurück nach oben</a></li>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Benedict Dev Team – Schulprojekt.</p>
+    </div>
+  </footer>
 </body>
 </html>
